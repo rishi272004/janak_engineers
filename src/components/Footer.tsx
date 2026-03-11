@@ -18,7 +18,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gray-50 text-gray-600 py-16 border-t-4 border-red-600">
+    <footer className="bg-gray-50 text-gray-600 py-16 border-t-4 border-cyan-600">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
@@ -36,12 +36,12 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold text-gray-900 mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
             <ul className="space-y-3">
-              <li><a href="#hero" className="hover:text-red-600 transition text-gray-600 text-sm">Home</a></li>
-              <li><a href="#about" className="hover:text-red-600 transition text-gray-600 text-sm">About Us</a></li>
-              <li><a href="#services" className="hover:text-red-600 transition text-gray-600 text-sm">Services</a></li>
-              <li><a href="#products" className="hover:text-red-600 transition text-gray-600 text-sm">Products</a></li>
-              <li><a href="#infrastructure" className="hover:text-red-600 transition text-gray-600 text-sm">Infrastructure</a></li>
-              <li><a href="#contact" className="hover:text-red-600 transition text-gray-600 text-sm">Contact Us</a></li>
+              <li><a href="#hero" className="hover:text-cyan-600 transition text-gray-600 text-sm">Home</a></li>
+              <li><a href="#about" className="hover:text-cyan-600 transition text-gray-600 text-sm">About Us</a></li>
+              <li><a href="#services" className="hover:text-cyan-600 transition text-gray-600 text-sm">Services</a></li>
+              <li><a href="#products" className="hover:text-cyan-600 transition text-gray-600 text-sm">Products</a></li>
+              <li><a href="#infrastructure" className="hover:text-cyan-600 transition text-gray-600 text-sm">Infrastructure</a></li>
+              <li><a href="#contact" className="hover:text-cyan-600 transition text-gray-600 text-sm">Contact Us</a></li>
             </ul>
           </div>
 
@@ -49,12 +49,12 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold text-gray-900 mb-6 uppercase tracking-wider text-sm">Our Services</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="hover:text-red-600 transition text-gray-600 text-sm">Shell Rolling</a></li>
-              <li><a href="#" className="hover:text-red-600 transition text-gray-600 text-sm">Section Bending</a></li>
-              <li><a href="#" className="hover:text-red-600 transition text-gray-600 text-sm">Tanks & Vessels</a></li>
-              <li><a href="#" className="hover:text-red-600 transition text-gray-600 text-sm">Hydraulic Press</a></li>
-              <li><a href="#" className="hover:text-red-600 transition text-gray-600 text-sm">Welding Rotators</a></li>
-              <li><a href="#" className="hover:text-red-600 transition text-gray-600 text-sm">Furnace Services</a></li>
+              <li><a href="#" className="hover:text-cyan-600 transition text-gray-600 text-sm">Shell Rolling</a></li>
+              <li><a href="#" className="hover:text-cyan-600 transition text-gray-600 text-sm">Section Bending</a></li>
+              <li><a href="#" className="hover:text-cyan-600 transition text-gray-600 text-sm">Tanks & Vessels</a></li>
+              <li><a href="#" className="hover:text-cyan-600 transition text-gray-600 text-sm">Hydraulic Press</a></li>
+              <li><a href="#" className="hover:text-cyan-600 transition text-gray-600 text-sm">Welding Rotators</a></li>
+              <li><a href="#" className="hover:text-cyan-600 transition text-gray-600 text-sm">Furnace Services</a></li>
             </ul>
           </div>
 
@@ -63,21 +63,21 @@ export default function Footer() {
             <h4 className="text-lg font-bold text-gray-900 mb-6 uppercase tracking-wider text-sm">Contact Info</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-cyan-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-600 text-sm leading-relaxed">921/A1, GIDC Estate, Makarpura, Vadodara, Gujarat - 390010</p>
+                  <a href="https://share.google/dtkmTxfYW4y61uDXH" target="_blank" rel="noopener noreferrer" className="text-gray-600 text-sm leading-relaxed hover:text-cyan-600 transition">921/A1, GIDC Estate, Makarpura, Vadodara, Gujarat - 390010</a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-cyan-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-600 text-sm">+91-9978849525</p>
+                  <a href="tel:+919978849525" className="text-gray-600 text-sm hover:text-cyan-600 transition">+91-9978849525</a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-cyan-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-600 text-sm">janakeng@hotmail.com</p>
+                  <a href="mailto:janakeng@hotmail.com" className="text-gray-600 text-sm hover:text-cyan-600 transition">janakeng@hotmail.com</a>
                 </div>
               </div>
             </div>
@@ -90,12 +90,9 @@ export default function Footer() {
         {/* Bottom Footer */}
         <div className="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-4">
           <p className="text-gray-600 text-sm">
-            &copy; {currentYear} <span className="text-red-600 font-bold">Janak Engineers</span>. All rights reserved.
+            &copy; {currentYear} <span className="text-cyan-600 font-bold">Janak Engineers</span>. All rights reserved.
           </p>
-          <div className="flex space-x-6">
-            <a href="#" className="hover:text-red-600 transition text-gray-600 text-sm">Privacy Policy</a>
-            <a href="#" className="hover:text-red-600 transition text-gray-600 text-sm">Terms of Service</a>
-          </div>
+          
         </div>
       </div>
     </footer>

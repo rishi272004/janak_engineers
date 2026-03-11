@@ -48,8 +48,8 @@ export default function Infrastructure() {
                 key={index}
                 className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition border border-gray-200"
               >
-                <div className="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                  <Icon className="w-7 h-7 text-red-600" />
+                <div className="w-14 h-14 bg-cyan-100 rounded-lg flex items-center justify-center mb-4">
+                  <Icon className="w-7 h-7 text-cyan-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {feature.title}
@@ -74,23 +74,23 @@ export default function Infrastructure() {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <span className="text-red-600 font-bold mr-3 text-lg">•</span>
+                  <span className="text-cyan-600 font-bold mr-3 text-lg">•</span>
                   <span className="text-gray-700">High-capacity material handling systems</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-red-600 font-bold mr-3 text-lg">•</span>
+                  <span className="text-cyan-600 font-bold mr-3 text-lg">•</span>
                   <span className="text-gray-700">Electric gantry cranes (10-ton and 5-ton)</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-red-600 font-bold mr-3 text-lg">•</span>
+                  <span className="text-cyan-600 font-bold mr-3 text-lg">•</span>
                   <span className="text-gray-700">Zip cranes and hook chucks</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-red-600 font-bold mr-3 text-lg">•</span>
+                  <span className="text-cyan-600 font-bold mr-3 text-lg">•</span>
                   <span className="text-gray-700">Hydra and mobile crane support</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-red-600 font-bold mr-3 text-lg">•</span>
+                  <span className="text-cyan-600 font-bold mr-3 text-lg">•</span>
                   <span className="text-gray-700">Safe and efficient lifting operations</span>
                 </li>
               </ul>

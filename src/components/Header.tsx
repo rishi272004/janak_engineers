@@ -35,8 +35,8 @@ export default function Header() {
             <Image
               src={isScrolled ? "/Janak_logo.png" : "/logo_white.png"}
               alt="Janak Engineers Logo"
-              width={180}
-              height={70}
+              width={220}
+              height={90}
               className="object-contain"
             />
           </div>
@@ -47,7 +47,7 @@ export default function Header() {
               onClick={() => scrollToSection('hero')}
               className={`font-medium text-base transition ${
                 isScrolled 
-                  ? 'text-gray-700 hover:text-red-600' 
+                  ? 'text-gray-700 hover:text-cyan-600' 
                   : 'text-white hover:text-gray-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]'
               }`}
             >
@@ -57,7 +57,7 @@ export default function Header() {
               onClick={() => scrollToSection('services')}
               className={`font-medium text-base transition ${
                 isScrolled 
-                  ? 'text-gray-700 hover:text-red-600' 
+                  ? 'text-gray-700 hover:text-cyan-600' 
                   : 'text-white hover:text-gray-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]'
               }`}
             >
@@ -67,7 +67,7 @@ export default function Header() {
               onClick={() => scrollToSection('products')}
               className={`font-medium text-base transition ${
                 isScrolled 
-                  ? 'text-gray-700 hover:text-red-600' 
+                  ? 'text-gray-700 hover:text-cyan-600' 
                   : 'text-white hover:text-gray-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]'
               }`}
             >
@@ -77,7 +77,7 @@ export default function Header() {
               onClick={() => scrollToSection('about')}
               className={`font-medium text-base transition ${
                 isScrolled 
-                  ? 'text-gray-700 hover:text-red-600' 
+                  ? 'text-gray-700 hover:text-cyan-600' 
                   : 'text-white hover:text-gray-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]'
               }`}
             >
@@ -87,7 +87,7 @@ export default function Header() {
               onClick={() => scrollToSection('infrastructure')}
               className={`font-medium text-base transition ${
                 isScrolled 
-                  ? 'text-gray-700 hover:text-red-600' 
+                  ? 'text-gray-700 hover:text-cyan-600' 
                   : 'text-white hover:text-gray-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]'
               }`}
             >
@@ -101,7 +101,7 @@ export default function Header() {
               onClick={() => scrollToSection('contact')}
               className={`font-medium px-5 py-2 rounded-full border-2 transition text-base ${
                 isScrolled 
-                  ? 'border-gray-400 text-gray-600 hover:border-red-600 hover:text-red-600' 
+                  ? 'border-gray-400 text-gray-600 hover:border-cyan-600 hover:text-cyan-600' 
                   : 'border-white text-white hover:bg-white hover:text-gray-900'
               }`}
             >
@@ -111,8 +111,8 @@ export default function Header() {
               onClick={() => scrollToSection('contact')}
               className={`font-bold px-6 py-2.5 rounded-full transition shadow-lg text-base ${
                 isScrolled
-                  ? 'bg-red-600 text-white hover:bg-red-700'
-                  : 'bg-red-600 text-white hover:bg-red-700'
+                  ? 'bg-cyan-600 text-white hover:bg-cyan-700'
+                  : 'bg-cyan-600 text-white hover:bg-cyan-700'
               }`}
             >
               Contact
@@ -151,8 +151,8 @@ export default function Header() {
               onClick={() => scrollToSection('hero')}
               className={`block w-full text-left px-4 py-2 rounded transition ${
                 isScrolled 
-                  ? 'text-gray-600 hover:bg-red-50' 
-                  : 'text-white hover:bg-red-600'
+                  ? 'text-gray-600 hover:bg-cyan-50' 
+                  : 'text-white hover:bg-cyan-600'
               }`}
             >
               Home
@@ -161,8 +161,8 @@ export default function Header() {
               onClick={() => scrollToSection('services')}
               className={`block w-full text-left px-4 py-2 rounded transition ${
                 isScrolled 
-                  ? 'text-gray-600 hover:bg-red-50' 
-                  : 'text-white hover:bg-red-600'
+                  ? 'text-gray-600 hover:bg-cyan-50' 
+                  : 'text-white hover:bg-cyan-600'
               }`}
             >
               Services
@@ -171,8 +171,8 @@ export default function Header() {
               onClick={() => scrollToSection('products')}
               className={`block w-full text-left px-4 py-2 rounded transition ${
                 isScrolled 
-                  ? 'text-gray-600 hover:bg-red-50' 
-                  : 'text-white hover:bg-red-600'
+                  ? 'text-gray-600 hover:bg-cyan-50' 
+                  : 'text-white hover:bg-cyan-600'
               }`}
             >
               Products
@@ -181,8 +181,8 @@ export default function Header() {
               onClick={() => scrollToSection('about')}
               className={`block w-full text-left px-4 py-2 rounded transition ${
                 isScrolled 
-                  ? 'text-gray-600 hover:bg-red-50' 
-                  : 'text-white hover:bg-red-600'
+                  ? 'text-gray-600 hover:bg-cyan-50' 
+                  : 'text-white hover:bg-cyan-600'
               }`}
             >
               About
@@ -191,8 +191,8 @@ export default function Header() {
               onClick={() => scrollToSection('infrastructure')}
               className={`block w-full text-left px-4 py-2 rounded transition ${
                 isScrolled 
-                  ? 'text-gray-600 hover:bg-red-50' 
-                  : 'text-white hover:bg-red-600'
+                  ? 'text-gray-600 hover:bg-cyan-50' 
+                  : 'text-white hover:bg-cyan-600'
               }`}
             >
               Infrastructure
@@ -201,8 +201,8 @@ export default function Header() {
               onClick={() => scrollToSection('contact')}
               className={`block w-full text-left px-4 py-2 rounded transition ${
                 isScrolled 
-                  ? 'text-gray-600 hover:bg-red-50' 
-                  : 'text-white hover:bg-red-600'
+                  ? 'text-gray-600 hover:bg-cyan-50' 
+                  : 'text-white hover:bg-cyan-600'
               }`}
             >
               Contact

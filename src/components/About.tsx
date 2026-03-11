@@ -21,32 +21,32 @@ export default function About() {
             {/* Features List */}
             <div className="space-y-4">
               <div className="flex items-center text-gray-700 text-lg">
-                <span className="text-red-600 font-bold mr-3">✓</span>
+                <span className="text-cyan-600 font-bold mr-3">✓</span>
                 <span>40+ years of proven expertise and excellence</span>
               </div>
               <div className="flex items-center text-gray-700 text-lg">
-                <span className="text-red-600 font-bold mr-3">✓</span>
+                <span className="text-cyan-600 font-bold mr-3">✓</span>
                 <span>Serving 5+ major industries across India</span>
               </div>
               <div className="flex items-center text-gray-700 text-lg">
-                <span className="text-red-600 font-bold mr-3">✓</span>
+                <span className="text-cyan-600 font-bold mr-3">✓</span>
                 <span>Precision-built solutions in multiple materials</span>
               </div>
               <div className="flex items-center text-gray-700 text-lg">
-                <span className="text-red-600 font-bold mr-3">✓</span>
+                <span className="text-cyan-600 font-bold mr-3">✓</span>
                 <span>Quality, efficiency, and reliability guaranteed</span>
               </div>
             </div>
 
             {/* Tagline */}
-            <p className="text-xl font-bold text-red-600 mt-8 italic">
+            <p className="text-xl font-bold text-cyan-600 mt-8 italic">
               "Engineering excellence driven by quality, efficiency, and reliability."
             </p>
           </div>
 
           {/* Right side - Image placeholder */}
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 rounded-2xl transform rotate-1"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-2xl transform rotate-1"></div>
             <div className="relative bg-white rounded-2xl p-8 shadow-lg">
               <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl h-96 flex items-center justify-center">
                 <img

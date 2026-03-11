@@ -4,7 +4,7 @@ export default function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
         style={{
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/hero-background.png)',
+          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/hero-background.JPG)',
           backgroundPosition: 'center',
         }}>
       </div>
@@ -25,7 +25,7 @@ export default function Hero() {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#services" className="px-8 py-4 bg-red-600 text-white rounded-full hover:bg-red-700 transition font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+          <a href="#services" className="px-8 py-4 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
             Explore Services
           </a>
           <a href="#contact" className="px-8 py-4 border-2 border-white text-white rounded-full hover:bg-white hover:text-gray-900 transition font-bold text-lg">
@@ -39,15 +39,15 @@ export default function Hero() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-3 gap-8">
             <div className="text-center">
-              <h3 className="text-3xl sm:text-4xl font-bold text-red-500">40+</h3>
+              <h3 className="text-3xl sm:text-4xl font-bold text-cyan-500">40+</h3>
               <p className="text-gray-300 mt-2">Years of Experience</p>
             </div>
             <div className="text-center">
-              <h3 className="text-3xl sm:text-4xl font-bold text-red-500">500+</h3>
+              <h3 className="text-3xl sm:text-4xl font-bold text-cyan-500">500+</h3>
               <p className="text-gray-300 mt-2">Machines Delivered</p>
             </div>
             <div className="text-center">
-              <h3 className="text-3xl sm:text-4xl font-bold text-red-500">5+</h3>
+              <h3 className="text-3xl sm:text-4xl font-bold text-cyan-500">5+</h3>
               <p className="text-gray-300 mt-2">Major Industries</p>
             </div>
           </div>

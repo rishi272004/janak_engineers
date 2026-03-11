@@ -48,7 +48,7 @@ export default function Services() {
                 key={index}
                 className="p-8 bg-white rounded-xl hover:shadow-lg transition transform hover:scale-105 border border-gray-200"
               >
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-cyan-600 rounded-lg flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
@@ -59,7 +59,7 @@ export default function Services() {
                   <ul className="text-xs text-gray-500 space-y-1">
                     {service.specs.map((spec, i) => (
                       <li key={i} className="flex items-center">
-                        <span className="w-1.5 h-1.5 bg-red-600 rounded-full mr-2"></span>
+                        <span className="w-1.5 h-1.5 bg-cyan-600 rounded-full mr-2"></span>
                         {spec}
                       </li>
                     ))}
