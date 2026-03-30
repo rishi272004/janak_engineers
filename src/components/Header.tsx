@@ -2,10 +2,45 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
-export default function Header() {
+const homeAboutLinks = [
+  { label: 'Home', href: '/#hero' },
+  { label: 'About', href: '/#about' },
+];
+
+const serviceLinks = [
+  { label: 'All Services', href: '/services' },
+  { label: 'Plate Bending & Shell Rolling', href: '/services/plate-bending-shell-rolling' },
+  { label: 'Section Bending', href: '/services/section-bending' },
+  { label: 'Tanks & Vessels Fabrication', href: '/services/tanks-vessel-fabrication' },
+];
+
+const productLinks = [
+  { label: 'All Products', href: '/products' },
+  { label: 'Plate Bending Machine', href: '/products/plate-bending-machines' },
+  { label: 'Hydraulic Press', href: '/products/hydraulic-press' },
+  { label: 'Welding Rotators', href: '/products/welding-rotators' },
+];
+
+type HeaderProps = {
+  isHomePage?: boolean;
+};
+
+export default function Header({ isHomePage = false }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const isHomeTransparent = isHomePage && !isScrolled && !isOpen;
+
+  const navigateToContact = () => {
+    if (window.location.pathname === '/') {
+      const contactSection = document.getElementById('contact');
+      contactSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+
+    window.location.href = '/#contact';
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,24 +51,17 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
-    setIsOpen(false);
-  };
-
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-white shadow-md' 
-        : 'bg-transparent'
-    }`}>
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        isHomeTransparent ? 'bg-transparent' : 'bg-white shadow-md'
+      }`}
+    >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Image
-              src={isScrolled ? "/Janak_logo.png" : "/logo_white.png"}
+              src={isHomeTransparent ? '/logo_white.png' : '/Janak_logo.png'}
               alt="Janak Engineers Logo"
               width={220}
               height={90}
@@ -41,172 +69,186 @@ export default function Header() {
             />
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 items-center">
-            <button
-              onClick={() => scrollToSection('hero')}
-              className={`font-medium text-base transition ${
-                isScrolled 
-                  ? 'text-gray-700 hover:text-cyan-600' 
-                  : 'text-white hover:text-gray-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]'
-              }`}
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection('services')}
-              className={`font-medium text-base transition ${
-                isScrolled 
-                  ? 'text-gray-700 hover:text-cyan-600' 
-                  : 'text-white hover:text-gray-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]'
-              }`}
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection('products')}
-              className={`font-medium text-base transition ${
-                isScrolled 
-                  ? 'text-gray-700 hover:text-cyan-600' 
-                  : 'text-white hover:text-gray-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]'
-              }`}
-            >
-              Products
-            </button>
-            <button
-              onClick={() => scrollToSection('about')}
-              className={`font-medium text-base transition ${
-                isScrolled 
-                  ? 'text-gray-700 hover:text-cyan-600' 
-                  : 'text-white hover:text-gray-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]'
-              }`}
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection('infrastructure')}
-              className={`font-medium text-base transition ${
-                isScrolled 
-                  ? 'text-gray-700 hover:text-cyan-600' 
-                  : 'text-white hover:text-gray-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]'
-              }`}
-            >
-              Infrastructure
-            </button>
+          <div className="hidden md:flex space-x-5 items-center">
+            {homeAboutLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`font-medium text-sm transition ${
+                  isHomeTransparent
+                    ? 'text-white hover:text-gray-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]'
+                    : 'text-gray-700 hover:text-cyan-600'
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            <div className="relative group">
+              <Link
+                href="/services"
+                className={`font-medium text-sm transition ${
+                  isHomeTransparent
+                    ? 'text-white hover:text-gray-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]'
+                    : 'text-gray-700 hover:text-cyan-600'
+                }`}
+              >
+                Services
+              </Link>
+              <div className="absolute left-0 top-full mt-2 w-72 rounded-xl border border-gray-200 bg-white shadow-xl opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 p-2">
+                {serviceLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-cyan-50 hover:text-cyan-700"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative group">
+              <Link
+                href="/products"
+                className={`font-medium text-sm transition ${
+                  isHomeTransparent
+                    ? 'text-white hover:text-gray-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]'
+                    : 'text-gray-700 hover:text-cyan-600'
+                }`}
+              >
+                Products
+              </Link>
+              <div className="absolute left-0 top-full mt-2 w-64 rounded-xl border border-gray-200 bg-white shadow-xl opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 p-2">
+                {productLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-cyan-50 hover:text-cyan-700"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
           </div>
 
-          {/* CTA Buttons */}
-          <div className="hidden md:flex space-x-4 items-center">
+          <div className="hidden md:flex items-center">
             <button
-              onClick={() => scrollToSection('contact')}
-              className={`font-medium px-5 py-2 rounded-full border-2 transition text-base ${
-                isScrolled 
-                  ? 'border-gray-400 text-gray-600 hover:border-cyan-600 hover:text-cyan-600' 
-                  : 'border-white text-white hover:bg-white hover:text-gray-900'
-              }`}
-            >
-              Get in Touch
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className={`font-bold px-6 py-2.5 rounded-full transition shadow-lg text-base ${
-                isScrolled
-                  ? 'bg-cyan-600 text-white hover:bg-cyan-700'
-                  : 'bg-cyan-600 text-white hover:bg-cyan-700'
-              }`}
+              type="button"
+              onClick={navigateToContact}
+              className="font-bold px-6 py-2.5 rounded-full transition shadow-lg text-base bg-cyan-600 text-white hover:bg-cyan-700 cursor-pointer"
             >
               Contact
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className={`md:hidden transition ${
-              isScrolled ? 'text-gray-600' : 'text-white'
+              isHomeTransparent ? 'text-white' : 'text-gray-600'
             }`}
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
+            {isOpen ? (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            )}
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isOpen && (
-          <div className={`md:hidden pb-4 space-y-2 transition ${
-            isScrolled ? 'bg-white' : 'bg-black bg-opacity-50'
-          }`}>
-            <button
-              onClick={() => scrollToSection('hero')}
-              className={`block w-full text-left px-4 py-2 rounded transition ${
-                isScrolled 
-                  ? 'text-gray-600 hover:bg-cyan-50' 
-                  : 'text-white hover:bg-cyan-600'
-              }`}
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection('services')}
-              className={`block w-full text-left px-4 py-2 rounded transition ${
-                isScrolled 
-                  ? 'text-gray-600 hover:bg-cyan-50' 
-                  : 'text-white hover:bg-cyan-600'
-              }`}
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection('products')}
-              className={`block w-full text-left px-4 py-2 rounded transition ${
-                isScrolled 
-                  ? 'text-gray-600 hover:bg-cyan-50' 
-                  : 'text-white hover:bg-cyan-600'
-              }`}
-            >
-              Products
-            </button>
-            <button
-              onClick={() => scrollToSection('about')}
-              className={`block w-full text-left px-4 py-2 rounded transition ${
-                isScrolled 
-                  ? 'text-gray-600 hover:bg-cyan-50' 
-                  : 'text-white hover:bg-cyan-600'
-              }`}
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection('infrastructure')}
-              className={`block w-full text-left px-4 py-2 rounded transition ${
-                isScrolled 
-                  ? 'text-gray-600 hover:bg-cyan-50' 
-                  : 'text-white hover:bg-cyan-600'
-              }`}
-            >
-              Infrastructure
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className={`block w-full text-left px-4 py-2 rounded transition ${
-                isScrolled 
-                  ? 'text-gray-600 hover:bg-cyan-50' 
-                  : 'text-white hover:bg-cyan-600'
-              }`}
-            >
-              Contact
-            </button>
+          <div className="md:hidden pb-4">
+            <div className="mt-2 rounded-2xl border border-gray-200 bg-white p-3 shadow-xl max-h-[70vh] overflow-y-auto">
+              <div className="space-y-1">
+                {homeAboutLinks.map((link) => (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-cyan-50 hover:text-cyan-700 transition"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsOpen(false);
+                    navigateToContact();
+                  }}
+                  className="block w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-cyan-50 hover:text-cyan-700 transition cursor-pointer"
+                >
+                  Contact
+                </button>
+              </div>
+
+              <div className="my-3 h-px bg-gray-200" />
+
+              <div>
+                <div className="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wider text-gray-500">
+                  Services
+                </div>
+                <div className="space-y-1">
+                  {serviceLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="block w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-cyan-50 hover:text-cyan-700 transition"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="my-3 h-px bg-gray-200" />
+
+              <div>
+                <div className="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wider text-gray-500">
+                  Products
+                </div>
+                <div className="space-y-1">
+                  {productLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="block w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-cyan-50 hover:text-cyan-700 transition"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </nav>

@@ -1,29 +1,27 @@
-import { Zap, Wrench, Hammer, Shield } from 'lucide-react';
+import Link from 'next/link';
+import { Zap, Wrench, Shield } from 'lucide-react';
 
 const services = [
   {
     icon: Zap,
     title: 'Plate Bending & Shell Rolling',
+    href: '/services/plate-bending-shell-rolling',
     description: 'High-quality plate bending & shell rolling with MS & SS plates up to 36mm thickness and 3000mm width capacity.',
     specs: ['MS Plates - 36mm thickness', 'SS Plates - 36mm thickness', '3000mm width capacity']
   },
   {
     icon: Wrench,
     title: 'Section Bending',
+    href: '/services/section-bending',
     description: 'Professional section bending services for MS and SS flats of various sizes tailored to your specifications.',
     specs: ['MS Flats', 'SS Flats', 'Custom sizes available']
   },
   {
     icon: Shield,
     title: 'Tanks & Vessel Fabrication',
-    description: 'Comprehensive fabrication for Buffer Vessels, Storage Tanks, Jacketed Vessels, Pressure Vessels, and Industrial Chimneys.',
-    specs: ['Buffer Vessels', 'Storage Tanks', 'Pressure Vessels', 'Ladle Furnaces']
-  },
-  {
-    icon: Hammer,
-    title: 'Furnace Repair & Maintenance',
-    description: 'Expert repair, maintenance, and support services for melting furnaces, ladle furnaces, and industrial equipment.',
-    specs: ['Melting Furnaces', 'Ladle Furnaces', 'Furnace Maintenance', 'Equipment Support']
+    href: '/services/tanks-vessel-fabrication',
+    description: 'Comprehensive fabrication services for buffer vessels, storage tanks, pressure vessels, oxygen/nitrogen tanks, and industrial chimneys.',
+    specs: ['Buffer Vessels', 'Storage Tanks', 'Pressure Vessels', 'Oxygen & Nitrogen Tanks']
   },
 ];
 
@@ -40,13 +38,14 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service) => {
             const Icon = service.icon;
             return (
-              <div
-                key={index}
-                className="p-8 bg-white rounded-xl hover:shadow-lg transition transform hover:scale-105 border border-gray-200"
+              <Link
+                key={service.title}
+                href={service.href}
+                className="block p-8 bg-white rounded-xl hover:shadow-lg transition transform hover:scale-105 border border-gray-200"
               >
                 <div className="w-12 h-12 bg-cyan-600 rounded-lg flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-white" />
@@ -65,9 +64,18 @@ export default function Services() {
                     ))}
                   </ul>
                 )}
-              </div>
+              </Link>
             );
           })}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            href="/services"
+            className="inline-flex items-center px-8 py-3 rounded-full bg-cyan-600 text-white font-semibold hover:bg-cyan-700 transition"
+          >
+            View Detailed Services
+          </Link>
         </div>
       </div>
     </section>

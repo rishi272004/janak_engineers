@@ -1,67 +1,61 @@
-
-'use client';
-import { MapPin, Phone, Mail, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
-import React, { useState } from 'react';
+import Link from 'next/link';
+import { MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const [email, setEmail] = useState('');
-  const [subscribeMessage, setSubscribeMessage] = useState('');
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubscribeMessage('Thank you for subscribing!');
-      setEmail('');
-      setTimeout(() => setSubscribeMessage(''), 3000);
-    }
-  };
 
   return (
-    <footer className="bg-gray-50 text-gray-600 py-16 border-t-4 border-cyan-600">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-50 text-gray-600 py-14 border-t-4 border-cyan-600">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
           {/* Brand Section */}
-          <div>
-            <div className="mb-4">
-              <img src="/Janak_logo.png" alt="Janak Engineers Logo" className="h-20 w-auto mx-auto" />
+          <div className="lg:col-span-4">
+            <div className="mb-5 flex items-center gap-3">
+              <img src="/Janak_logo.png" alt="Janak Engineers Logo" className="h-16 w-auto" />
             </div>
-            <p className="text-gray-600 mb-6 leading-relaxed text-sm">
+            <p className="text-gray-600 leading-relaxed text-sm max-w-sm">
               We are a prominent Manufacturer and Supplier of Plate Bending Machines, Hydraulic Press Machines and Welding Rotators which are a basic requirement in any fabrication industry in the world.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-bold text-gray-900 mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
-            <ul className="space-y-3">
-              <li><a href="#hero" className="hover:text-cyan-600 transition text-gray-600 text-sm">Home</a></li>
-              <li><a href="#about" className="hover:text-cyan-600 transition text-gray-600 text-sm">About Us</a></li>
-              <li><a href="#services" className="hover:text-cyan-600 transition text-gray-600 text-sm">Services</a></li>
-              <li><a href="#products" className="hover:text-cyan-600 transition text-gray-600 text-sm">Products</a></li>
-              <li><a href="#infrastructure" className="hover:text-cyan-600 transition text-gray-600 text-sm">Infrastructure</a></li>
-              <li><a href="#contact" className="hover:text-cyan-600 transition text-gray-600 text-sm">Contact Us</a></li>
+          <div className="lg:col-span-2">
+            <h4 className="text-base font-bold text-gray-900 mb-5 tracking-wide">Quick Links</h4>
+            <ul className="space-y-2.5">
+              <li><Link href="/#hero" className="hover:text-cyan-600 transition text-gray-600 text-sm">Home</Link></li>
+              <li><Link href="/#about" className="hover:text-cyan-600 transition text-gray-600 text-sm">About Us</Link></li>
+              <li><Link href="/services" className="hover:text-cyan-600 transition text-gray-600 text-sm">Services</Link></li>
+              <li><Link href="/products" className="hover:text-cyan-600 transition text-gray-600 text-sm">Products</Link></li>
+              <li><Link href="/#infrastructure" className="hover:text-cyan-600 transition text-gray-600 text-sm">Infrastructure</Link></li>
+              <li><Link href="/#contact" className="hover:text-cyan-600 transition text-gray-600 text-sm">Contact Us</Link></li>
             </ul>
           </div>
 
           {/* Our Services */}
-          <div>
-            <h4 className="text-lg font-bold text-gray-900 mb-6 uppercase tracking-wider text-sm">Our Services</h4>
-            <ul className="space-y-3">
-              <li><a href="#" className="hover:text-cyan-600 transition text-gray-600 text-sm">Shell Rolling</a></li>
-              <li><a href="#" className="hover:text-cyan-600 transition text-gray-600 text-sm">Section Bending</a></li>
-              <li><a href="#" className="hover:text-cyan-600 transition text-gray-600 text-sm">Tanks & Vessels</a></li>
-              <li><a href="#" className="hover:text-cyan-600 transition text-gray-600 text-sm">Hydraulic Press</a></li>
-              <li><a href="#" className="hover:text-cyan-600 transition text-gray-600 text-sm">Welding Rotators</a></li>
-              <li><a href="#" className="hover:text-cyan-600 transition text-gray-600 text-sm">Furnace Services</a></li>
+          <div className="lg:col-span-2">
+            <h4 className="text-base font-bold text-gray-900 mb-5 tracking-wide">Our Services</h4>
+            <ul className="space-y-2.5">
+              <li><Link href="/services/plate-bending-shell-rolling" className="hover:text-cyan-600 transition text-gray-600 text-sm">Plate Bending & Shell Rolling</Link></li>
+              <li><Link href="/services/section-bending" className="hover:text-cyan-600 transition text-gray-600 text-sm">Section Bending</Link></li>
+              <li><Link href="/services/tanks-vessel-fabrication" className="hover:text-cyan-600 transition text-gray-600 text-sm">Tanks & Vessels Fabrication</Link></li>
+            </ul>
+          </div>
+
+          {/* Our Products */}
+          <div className="lg:col-span-2">
+            <h4 className="text-base font-bold text-gray-900 mb-5 tracking-wide">Our Products</h4>
+            <ul className="space-y-2.5">
+              <li><Link href="/products/plate-bending-machines" className="hover:text-cyan-600 transition text-gray-600 text-sm">Plate Bending Machine</Link></li>
+              <li><Link href="/products/hydraulic-press" className="hover:text-cyan-600 transition text-gray-600 text-sm">Hydraulic Press</Link></li>
+              <li><Link href="/products/welding-rotators" className="hover:text-cyan-600 transition text-gray-600 text-sm">Welding Rotators</Link></li>
             </ul>
           </div>
 
           {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-bold text-gray-900 mb-6 uppercase tracking-wider text-sm">Contact Info</h4>
-            <div className="space-y-4">
+          <div className="lg:col-span-2">
+            <h4 className="text-base font-bold text-gray-900 mb-5 tracking-wide">Contact Info</h4>
+            <div className="space-y-5">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-cyan-600 mt-0.5 flex-shrink-0" />
                 <div>
@@ -88,11 +82,21 @@ export default function Footer() {
         <div className="border-t border-gray-300 my-8"></div>
 
         {/* Bottom Footer */}
-        <div className="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-4">
+        <div className="flex flex-col sm:flex-row sm:justify-between items-center text-center sm:text-left gap-2">
           <p className="text-gray-600 text-sm">
             &copy; {currentYear} <span className="text-cyan-600 font-bold">Janak Engineers</span>. All rights reserved.
           </p>
-          
+          <p className="text-gray-600 text-sm">
+            Created and Designed by{' '}
+            <a
+              href="https://www.digikentro.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-600 font-semibold hover:underline"
+            >
+              Digikentro
+            </a>
+          </p>
         </div>
       </div>
     </footer>
