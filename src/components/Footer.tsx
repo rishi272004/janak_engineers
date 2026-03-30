@@ -13,7 +13,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-4">
             <div className="mb-5 flex items-center gap-3">
-              <Image src="/Janak_logo.png" alt="Janak Engineers Logo" width={64} height={64} className="h-16 w-auto" />
+              <Image src="/Janak_logo.png" alt="Janak Engineers Logo" width={160} height={160} className="h-20 w-auto" priority />
             </div>
             <p className="text-gray-600 leading-relaxed text-sm max-w-sm">
               We are a prominent Manufacturer and Supplier of Plate Bending Machines, Hydraulic Press Machines and Welding Rotators which are a basic requirement in any fabrication industry in the world.

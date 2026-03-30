@@ -34,7 +34,7 @@ export default function Hero() {
         </div>
 
         {/* Mobile Stats */}
-        <div className="md:hidden mt-10 bg-black/35 border border-white/40 rounded-3xl py-5 px-4">
+        <div className="md:hidden mt-10 bg-black/35 border border-white/40 rounded-3xl py-5 px-4 hidden">
           <div className="grid grid-cols-2 gap-3">
             <div className="hidden text-center">
               <h3 className="text-4xl font-bold text-cyan-400">40+</h3>
@@ -53,7 +53,7 @@ export default function Hero() {
       </div>
 
       {/* Stats Section at Bottom */}
-      <div className="hidden md:block absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent py-12">
+      <div className="hidden absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-8">
             <div className="hidden text-center">
