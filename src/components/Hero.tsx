@@ -35,16 +35,16 @@ export default function Hero() {
 
         {/* Mobile Stats */}
         <div className="md:hidden mt-10 bg-black/35 border border-white/40 rounded-3xl py-5 px-4">
-          <div className="grid grid-cols-3 gap-3">
-            <div className="text-center">
+          <div className="grid grid-cols-2 gap-3">
+            <div className="hidden text-center">
               <h3 className="text-4xl font-bold text-cyan-400">40+</h3>
               <p className="text-white/90 mt-2 text-sm">Years of Experience</p>
             </div>
-            <div className="text-center">
+            <div className="hidden text-center">
               <h3 className="text-4xl font-bold text-cyan-400">500+</h3>
               <p className="text-white/90 mt-2 text-sm">Machines Delivered</p>
             </div>
-            <div className="text-center">
+            <div className="hidden text-center">
               <h3 className="text-4xl font-bold text-cyan-400">5+</h3>
               <p className="text-white/90 mt-2 text-sm">Major Industries</p>
             </div>
@@ -55,16 +55,16 @@ export default function Hero() {
       {/* Stats Section at Bottom */}
       <div className="hidden md:block absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-3 gap-8">
-            <div className="text-center">
+          <div className="grid grid-cols-2 gap-8">
+            <div className="hidden text-center">
               <h3 className="text-3xl sm:text-4xl font-bold text-cyan-500">40+</h3>
               <p className="text-gray-300 mt-2">Years of Experience</p>
             </div>
-            <div className="text-center">
+            <div className="hidden text-center">
               <h3 className="text-3xl sm:text-4xl font-bold text-cyan-500">500+</h3>
               <p className="text-gray-300 mt-2">Machines Delivered</p>
             </div>
-            <div className="text-center">
+            <div className="hidden text-center">
               <h3 className="text-3xl sm:text-4xl font-bold text-cyan-500">5+</h3>
               <p className="text-gray-300 mt-2">Major Industries</p>
             </div>
