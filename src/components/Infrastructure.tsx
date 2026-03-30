@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Building2, Zap, Forklift, Shield } from 'lucide-react';
 
 const infrastructureFeatures = [
@@ -98,11 +99,13 @@ export default function Infrastructure() {
 
             {/* Right side - Visualization */}
             <div className="flex justify-center items-center w-full py-12">
-              <img
+              <Image
                 src="/infra.jpg"
                 alt="Infrastructure Facility"
+                width={500}
+                height={400}
                 className="rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
-                style={{ maxWidth: '500px', width: '100%' }}
+                style={{ maxWidth: '500px', width: '100%', height: 'auto' }}
               />
             </div>
           </div>

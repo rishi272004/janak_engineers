@@ -78,6 +78,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Preload hero background image for faster loading */}
+        <link rel="preload" as="image" href="/hero-background.JPG" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

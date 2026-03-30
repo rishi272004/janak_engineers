@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
@@ -12,7 +13,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-4">
             <div className="mb-5 flex items-center gap-3">
-              <img src="/Janak_logo.png" alt="Janak Engineers Logo" className="h-16 w-auto" />
+              <Image src="/Janak_logo.png" alt="Janak Engineers Logo" width={64} height={64} className="h-16 w-auto" />
             </div>
             <p className="text-gray-600 leading-relaxed text-sm max-w-sm">
               We are a prominent Manufacturer and Supplier of Plate Bending Machines, Hydraulic Press Machines and Welding Rotators which are a basic requirement in any fabrication industry in the world.
