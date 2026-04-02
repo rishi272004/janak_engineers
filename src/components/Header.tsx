@@ -60,13 +60,15 @@ export default function Header({ isHomePage = false }: HeaderProps) {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0 flex items-center">
-            <Image
-              src={isHomeTransparent ? '/logo_white.png' : '/Janak_logo.png'}
-              alt="Janak Engineers Logo"
-              width={220}
-              height={90}
-              className="object-contain"
-            />
+            <Link href="/" aria-label="Go to homepage" onClick={() => setIsOpen(false)}>
+              <Image
+                src={isHomeTransparent ? '/logo_white.png' : '/Janak_logo.png'}
+                alt="Janak Engineers Logo"
+                width={220}
+                height={90}
+                className="object-contain"
+              />
+            </Link>
           </div>
 
           <div className="hidden md:flex space-x-5 items-center">
