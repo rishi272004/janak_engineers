@@ -1,12 +1,19 @@
+import Image from 'next/image';
+
 export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen md:h-screen w-full flex items-start md:items-center justify-center overflow-hidden -mt-20 pt-24 md:pt-0 pb-10 md:pb-0">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
-        style={{
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/hero-background.JPG)',
-          backgroundPosition: 'center',
-        }}>
+      <div className="absolute inset-0">
+        <Image
+          src="/hero-background.JPG"
+          alt="Industrial fabrication facility"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
       {/* Content */}

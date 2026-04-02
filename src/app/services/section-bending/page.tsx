@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Image from 'next/image';
-import { getPageMetadata } from '@/lib/seo';
+import ServiceImageSlider from '@/components/ServiceImageSlider';
+import { getPageMetadata, getServiceStructuredData } from '@/lib/seo';
 
 export const metadata: Metadata = getPageMetadata({
   title: 'Section Bending Service',
@@ -13,22 +13,41 @@ export const metadata: Metadata = getPageMetadata({
 });
 
 export default function SectionBendingPage() {
+  const serviceImages = [
+    'section_bending/1198.jpg',
+    'section_bending/17455.jpg',
+    'section_bending/6.jpg',
+    'section_bending/section_bending.jpg'
+  ];
+  const serviceStructuredData = getServiceStructuredData({
+    name: 'Section Bending Service',
+    description:
+      'Professional section bending services for MS and SS flats with precise custom profiles for structural and industrial applications.',
+    path: '/services/section-bending',
+    imagePaths: serviceImages,
+  });
+
   return (
     <div className="bg-gray-100 min-h-screen">
       <Header />
       <main>
-        <section className="bg-gradient-to-r from-cyan-800 to-slate-900 text-white py-20">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceStructuredData) }}
+        />
+
+        <section className="bg-gradient-to-r from-cyan-800 to-slate-900 text-white py-14 sm:py-20">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl sm:text-5xl font-bold">Section Bending</h1>
-            <p className="mt-4 text-cyan-100 text-lg max-w-4xl">
+            <h1 className="text-3xl sm:text-5xl font-bold">Section Bending</h1>
+            <p className="mt-4 text-cyan-100 text-base sm:text-lg max-w-4xl">
               Precision section bending for MS and SS flats with custom profiles for industrial and structural use.
             </p>
           </div>
         </section>
 
-        <section className="py-16">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <article className="lg:col-span-2 bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+        <section className="py-10 sm:py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 xl:grid-cols-[1fr_1.1fr] gap-6 sm:gap-8 xl:gap-10 items-start">
+            <article className="bg-white rounded-2xl border border-gray-200 p-5 sm:p-8 shadow-sm">
               <p className="text-gray-700 leading-relaxed">
                 We offer professional section bending services for MS and SS flats, delivering precise curves and consistent quality for a wide range of fabrication and structural applications. Using advanced bending equipment and experienced operators, we ensure accurate shaping while maintaining the strength and integrity of the material.
               </p>
@@ -46,16 +65,12 @@ export default function SectionBendingPage() {
               </p>
             </article>
 
-            <aside className="self-start bg-white rounded-2xl border border-gray-200 p-3 shadow-sm">
-              <div className="h-64 md:h-72 rounded-lg overflow-hidden border border-gray-200">
-                <Image
-                  src="/section_bending.jpg"
-                  alt="Section Bending"
-                  width={1000}
-                  height={700}
-                  className="h-full w-full object-cover"
-                />
-              </div>
+            <aside className="self-start xl:sticky xl:top-24">
+              <ServiceImageSlider
+                images={serviceImages}
+                altPrefix="Section Bending"
+                emptyMessage="Section Bending images will appear here once they are uploaded."
+              />
             </aside>
           </div>
         </section>

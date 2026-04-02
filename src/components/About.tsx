@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function About() {
   return (
     <section id="about" className="py-20 bg-white">
@@ -40,7 +42,7 @@ export default function About() {
 
             {/* Tagline */}
             <p className="text-xl font-bold text-cyan-600 mt-8 italic">
-              "Engineering excellence driven by quality, efficiency, and reliability."
+              Engineering excellence driven by quality, efficiency, and reliability.
             </p>
           </div>
 
@@ -48,12 +50,13 @@ export default function About() {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-2xl transform rotate-1"></div>
             <div className="relative bg-white rounded-2xl p-8 shadow-lg">
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl h-96 flex items-center justify-center">
-                <img
+              <div className="relative bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl h-96 overflow-hidden border border-blue-200 shadow-lg">
+                <Image
                   src="/about.jpg"
                   alt="About Janak Engineers"
-                  className="object-cover rounded-xl h-100 w-full shadow-lg border border-blue-200"
-                  style={{ maxWidth: '600px' }}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
                 />
               </div>
             </div>

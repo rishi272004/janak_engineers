@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { getCanonicalUrl, siteConfig } from "@/lib/seo";
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon-round.png", type: "image/png" },
-      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.png", type: "image/png" },
     ],
     shortcut: "/favicon-round.png",
     apple: "/favicon-round.png",
@@ -69,6 +69,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0f766e",
 };
 
 export default function RootLayout({
