@@ -25,7 +25,7 @@ const coreServices = [
   {
     title: 'Section Bending',
     href: '/services/section-bending',
-    image: '/section_bending.jpg',
+    image: '/section_bending/section_bending.jpg',
     intro:
       'Professional section bending services for MS and SS flats with precise curves, circular rings, and custom profiles for structural and industrial applications.',
     points: ['MS Flats', 'SS Flats', 'Custom sizes available'],
