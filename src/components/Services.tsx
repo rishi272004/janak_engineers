@@ -6,7 +6,7 @@ const services = [
   {
     icon: Zap,
     title: 'Plate Bending & Shell Rolling',
-    image: '/shell_rolling.jpg',
+    image: '/10338.jpg',
     href: '/services/plate-bending-shell-rolling',
     description: 'High-quality plate bending & shell rolling with MS & SS plates up to 36mm thickness and 3000mm width capacity.',
     specs: ['MS Plates - 36mm thickness', 'SS Plates - 36mm thickness', '3000mm width capacity']
@@ -22,7 +22,7 @@ const services = [
   {
     icon: Shield,
     title: 'Tanks & Vessel Fabrication',
-    image: '/tanks_vessel.png',
+    image: '/135499.jpg',
     href: '/services/tanks-vessel-fabrication',
     description: 'Comprehensive fabrication services for buffer vessels, storage tanks, pressure vessels, oxygen/nitrogen tanks, and industrial chimneys.',
     specs: ['Buffer Vessels', 'Storage Tanks', 'Pressure Vessels', 'Oxygen & Nitrogen Tanks']

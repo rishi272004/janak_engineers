@@ -58,25 +58,25 @@ export default function Header({ isHomePage = false }: HeaderProps) {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <div className="flex-shrink-0 flex items-center">
+        <div className="flex justify-between items-center h-28">
+          <div className="flex-shrink-0 flex items-center md:flex-1 md:justify-start">
             <Link href="/" aria-label="Go to homepage" onClick={() => setIsOpen(false)}>
               <Image
                 src={isHomeTransparent ? '/logo_white.png' : '/Janak_logo.png'}
                 alt="Janak Engineers Logo"
-                width={220}
-                height={90}
+                width={280}
+                height={115}
                 className="object-contain"
               />
             </Link>
           </div>
 
-          <div className="hidden md:flex space-x-5 items-center">
+          <div className="hidden md:flex space-x-5 items-center justify-center">
             {homeAboutLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className={`font-medium text-sm transition ${
+                className={`font-medium text-xl transition ${
                   isHomeTransparent
                     ? 'text-white hover:text-gray-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]'
                     : 'text-gray-700 hover:text-cyan-600'
@@ -89,7 +89,7 @@ export default function Header({ isHomePage = false }: HeaderProps) {
             <div className="relative group">
               <Link
                 href="/services"
-                className={`font-medium text-sm transition ${
+                className={`font-medium text-xl transition ${
                   isHomeTransparent
                     ? 'text-white hover:text-gray-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]'
                     : 'text-gray-700 hover:text-cyan-600'
@@ -102,7 +102,7 @@ export default function Header({ isHomePage = false }: HeaderProps) {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-cyan-50 hover:text-cyan-700"
+                    className="block rounded-lg px-3 py-2 text-xl text-gray-700 hover:bg-cyan-50 hover:text-cyan-700"
                   >
                     {link.label}
                   </Link>
@@ -113,7 +113,7 @@ export default function Header({ isHomePage = false }: HeaderProps) {
             <div className="relative group">
               <Link
                 href="/products"
-                className={`font-medium text-sm transition ${
+                className={`font-medium text-xl transition ${
                   isHomeTransparent
                     ? 'text-white hover:text-gray-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]'
                     : 'text-gray-700 hover:text-cyan-600'
@@ -126,7 +126,7 @@ export default function Header({ isHomePage = false }: HeaderProps) {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-cyan-50 hover:text-cyan-700"
+                    className="block rounded-lg px-3 py-2 text-xl text-gray-700 hover:bg-cyan-50 hover:text-cyan-700"
                   >
                     {link.label}
                   </Link>
@@ -136,7 +136,7 @@ export default function Header({ isHomePage = false }: HeaderProps) {
 
           </div>
 
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center md:flex-1 md:justify-end">
             <button
               type="button"
               onClick={navigateToContact}

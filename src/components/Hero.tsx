@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen md:h-screen w-full flex items-start md:items-center justify-center overflow-hidden -mt-20 pt-24 md:pt-0 pb-10 md:pb-0">
+    <section id="hero" className="relative min-h-screen md:h-screen w-full flex items-start md:items-center justify-center overflow-hidden -mt-28 pt-32 md:pt-0 pb-10 md:pb-0">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image
@@ -23,7 +23,7 @@ export default function Hero() {
         </h1>
         
         <p className="text-lg sm:text-2xl text-white mb-6 leading-relaxed">
-          Leading Manufacturer of Plate Bending Machines, Hydraulic Presses & Welding Rotators
+          Leading Manufacturer of Plate Bending Machines, Hydraulic Press & Welding Rotators
         </p>
 
         <p className="text-base sm:text-lg text-gray-200 mb-10 leading-relaxed max-w-3xl mx-auto">
